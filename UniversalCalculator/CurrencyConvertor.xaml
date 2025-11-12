@@ -33,26 +33,71 @@
 					<TextBlock FontSize="40"
 						Margin="0,10,0,0"		   
 							   >From</TextBlock>
-					<ComboBox x:Name="FromCurrencyComboBox"
-					SelectionChanged="FromCurrencyComboBox_SelectionChanged"
-					Width="180">
-						<ComboBoxItem>US Dollar</ComboBoxItem>
-						<ComboBoxItem>Euro</ComboBoxItem>
-						<ComboBoxItem>British</ComboBoxItem>
-						<ComboBoxItem>Inidan Rupee</ComboBoxItem>
-					</ComboBox>
+					<ComboBox
+							x:Name="FromCurrencyComboBox"
+							Width="180">
+							<ComboBoxItem Tag="USD" IsSelected="True">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/USA1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="USD - US Dollar"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="EUR">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/EUR1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="EUR - Euro"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="GBP">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/UK1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="GBP - British"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="INR">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/INDIA.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="INR - Indian Rupee"/>
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
 				</StackPanel>
 
 				<StackPanel Margin="50">
 					<TextBlock FontSize="40"
 					Margin="0,10,0,0"	
 							   >To</TextBlock>
-					<ComboBox
-					Width="180">
-						<ComboBoxItem>US Dollar</ComboBoxItem>
-						<ComboBoxItem>Euro</ComboBoxItem>
-						<ComboBoxItem>British</ComboBoxItem>
-						<ComboBoxItem>Inidan Rupee</ComboBoxItem>
+					<ComboBox x:Name="toCurrencyComboBox" Width="180">
+						<ComboBoxItem Tag="USD">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/USA1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="USD - US Dollar"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem IsSelected="True" Tag="EUR">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/EUR1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="EUR - Euro"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem Tag="GBP">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/UK1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="GBP - British"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem Tag="INR">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/INDIA.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="INR - Indian Rupee"/>
+							</StackPanel>
+						</ComboBoxItem>
 					</ComboBox>
 				</StackPanel>
 
@@ -65,13 +110,13 @@
 					<TextBlock x:Name="CurrencyType" FontSize="30" Margin="20">USD =</TextBlock>
 				</StackPanel>
 	
-				<TextBlock x:Name="ToCurrencyText" FontSize="30" Margin="20">TO CURRENCY CALCULATION JERE</TextBlock>
-				<TextBlock x:Name="ConversionRateForwards" FontSize="30" Margin="20">1 CURRENCY = CONVERSION RATE</TextBlock>
-				<TextBlock x:Name="ConversionRateBackwards" FontSize="30" Margin="20">OTHER WAY AROUND BLAHA</TextBlock>
+				<TextBlock x:Name="CurrencyConversionSum" FontSize="30" Margin="20">TO CURRENCY CALCULATION JERE</TextBlock>
+				<TextBlock x:Name="ConversionRateForwards" FontSize="30" Margin="20">1 USD = 0.8518992 EUR</TextBlock>
+				<TextBlock x:Name="ConversionRateBackwards" FontSize="30" Margin="20">1 EUR = 1.1739732 USD</TextBlock>
 			</StackPanel>
 
 			<StackPanel HorizontalAlignment="Center">
-				<Button Width="200" Margin="20">Calculate Currency</Button>
+				<Button x:Name="CalculateCurrencyButton" Width="200" Margin="20" Click="CalculateCurrencyButton_Click">Calculate Currency</Button>
 				<Button Width="200" Margin="20">Exit</Button>
 			</StackPanel>
 
