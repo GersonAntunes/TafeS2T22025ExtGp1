@@ -23,7 +23,7 @@
 				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Background="Gray" Width="180"/>
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Margin="5">
-				<Button x:Name="currencyCalculatorButton" Content="Currency Calculator" Background="Gray" Width="180"/>
+				<Button x:Name="currencyCalculatorButton" Content="Currency Calculator" Background="Gray" Width="180" Click="currencyCalculatorButton_Click"/>
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Margin="5">
 				<Button x:Name="unitsConverterCalculatorButton" Content="Units Converter Calculator" Background="Gray" Width="180"/>

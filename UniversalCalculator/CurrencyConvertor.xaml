@@ -1,0 +1,128 @@
+﻿<Page
+    x:Class="Calculator.CurrencyConvertor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+		<StackPanel>
+			
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock FontSize="50" Margin="50">Currency Conversion Calculator</TextBlock>
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+				<StackPanel Margin="50">
+					<TextBlock FontSize="40">Amount $</TextBlock>
+					<TextBox  x:Name="AmountInput"
+						FontSize="30"
+						Width="180"
+						Margin="0,10,0,0"
+						HorizontalAlignment="Left"
+						PlaceholderText="Amount..."
+						TextChanged="AmountInput_TextChanged"></TextBox>
+		
+				</StackPanel>
+
+				<StackPanel Margin="50">
+					<TextBlock FontSize="40"
+						Margin="0,10,0,0"		   
+							   >From</TextBlock>
+					<ComboBox
+							x:Name="FromCurrencyComboBox"
+							Width="180">
+							<ComboBoxItem Tag="USD" IsSelected="True">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/USA1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="USD - US Dollar"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="EUR">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/EUR1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="EUR - Euro"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="GBP">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/UK1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="GBP - British"/>
+								</StackPanel>
+							</ComboBoxItem>
+
+							<ComboBoxItem Tag="INR">
+								<StackPanel Orientation="Horizontal">
+									<Image Source="/Images/INDIA.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+									<TextBlock Text="INR - Indian Rupee"/>
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+				</StackPanel>
+
+				<StackPanel Margin="50">
+					<TextBlock FontSize="40"
+					Margin="0,10,0,0"	
+							   >To</TextBlock>
+					<ComboBox x:Name="toCurrencyComboBox" Width="180">
+						<ComboBoxItem Tag="USD">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/USA1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="USD - US Dollar"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem IsSelected="True" Tag="EUR">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/EUR1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="EUR - Euro"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem Tag="GBP">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/UK1.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="GBP - British"/>
+							</StackPanel>
+						</ComboBoxItem>
+
+						<ComboBoxItem Tag="INR">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="/Images/INDIA.PNG" Width="25" Height="25" Margin="0,0,8,0"/>
+								<TextBlock Text="INR - Indian Rupee"/>
+							</StackPanel>
+						</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+
+			</StackPanel>
+
+
+			<StackPanel HorizontalAlignment="Center">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock x:Name="CurrencyAmount" FontSize="30" Margin="20">100</TextBlock>
+					<TextBlock x:Name="CurrencyType" FontSize="30" Margin="20">USD =</TextBlock>
+				</StackPanel>
+	
+				<TextBlock x:Name="CurrencyConversionSum" FontSize="30" Margin="20">TO CURRENCY CALCULATION JERE</TextBlock>
+				<TextBlock x:Name="ConversionRateForwards" FontSize="30" Margin="20">1 USD = 0.8518992 EUR</TextBlock>
+				<TextBlock x:Name="ConversionRateBackwards" FontSize="30" Margin="20">1 EUR = 1.1739732 USD</TextBlock>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Center">
+				<Button x:Name="CalculateCurrencyButton" Width="200" Margin="20" Click="CalculateCurrencyButton_Click">Calculate Currency</Button>
+				<Button Width="200" Margin="20">Exit</Button>
+			</StackPanel>
+
+
+
+		</StackPanel>
+
+	</Grid>
+</Page>
