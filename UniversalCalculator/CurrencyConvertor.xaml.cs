@@ -98,7 +98,7 @@ namespace Calculator
 			{
 				var dialog = new MessageDialog("Amount must be a valid number");
 				await dialog.ShowAsync();
-				return; // stop execution if input is invalid
+				return; 
 			}
 
 			if (toCurrencyComboBox?.SelectedItem is ComboBoxItem toItem &&
