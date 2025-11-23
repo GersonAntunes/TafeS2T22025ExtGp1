@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Calculator.MortgageCalc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+		<StackPanel HorizontalAlignment="Center" Margin="10" Width="500">
+			<StackPanel HorizontalAlignment="Center">
+				<TextBlock x:Name="mortgageCalculatorTextBlock" Text="Mortgage Calculator" FontSize="20"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="485">
+				<TextBlock x:Name="principalBorrowedTextBlock" Text="Principal Borrowed: $" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBox x:Name="principalBorrowedTextBox" PlaceholderText="" VerticalAlignment="Center" Margin="5" Width="250" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="412">
+				<TextBlock x:Name="yearsTextBlock" Text="Years:"  Margin="11" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+				<TextBox x:Name="yearsTextBox" PlaceholderText="" Margin="5" Width="250"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="426">
+				<TextBlock x:Name="monthsTextBlock" Text="Months:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+				<TextBox x:Name="monthsTextBox" PlaceholderText="" VerticalAlignment="Center" Margin="5" Width="250"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="500">
+				<TextBlock x:Name="annualInterestRateTextBlock" Text="Annual Interest Rate: %" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBox x:Name="annualInterestRateTextBox" PlaceholderText="" VerticalAlignment="Center" Margin="5" Width="250"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="500">
+				<TextBlock x:Name="monthlyInteresetRateTextBlock" Text="Monthly Intereset Rate:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBox x:Name="monthlyInteresetRateTextBox" PlaceholderText="" VerticalAlignment="Center" Margin="5" Width="250"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="500">
+				<TextBlock x:Name="monthlyRepaymentTextBlock" Text="Monthly Repayment:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8"/>
+				<TextBox x:Name="monthlyRepaymentTextBox" PlaceholderText="" VerticalAlignment="Center" Margin="5" Width="250"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="15" Width="429">
+				<Button x:Name="calculateButton" Content="Calculate" Background="Gray" Width="150" Margin="15" Click="calculateButton_Click"/>
+				<Button x:Name="exitButton" Content="Exit" Background="Gray" Width="150" Margin="15" Click="exitButton_Click"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Page>
