@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,24 +29,49 @@ namespace Calculator
 			this.InitializeComponent();
 		}
 
-		private void temperatureButton_Click(object sender, RoutedEventArgs e)
+		private async void temperatureButton_Click(object sender, RoutedEventArgs e)
 		{
-			double temp = int.Parse(inputTextBox.Text);
-			if(title.Text == "Metric to Imperial")
+			double temp = 0;
+			try
+			{
+				temp = int.Parse(inputTextBox.Text);
+			}
+			catch (Exception ex)
+			{
+				var popUp = new MessageDialog(ex.Message);
+				await popUp.ShowAsync();
+				inputTextBox.Text = "";
+				inputTextBox.Focus(FocusState.Programmatic);
+				return;
+			}
+			
+			if (title.Text == "Metric to Imperial")
 			{
 				temp = (temp * 1.8) + 32;
 			}
-			else if(title.Text == "Imperial to Metric")
+			else if (title.Text == "Imperial to Metric")
 			{
 				temp = (temp - 32) / 1.8;
 			}
-			outputTextBox.Text = temp.ToString();
-
+			outputTextBox.Text = Math.Round(temp,4).ToString();
 		}
 
-		private void distanceButton_Click(object sender, RoutedEventArgs e)
+		private async void distanceButton_Click(object sender, RoutedEventArgs e)
 		{
-			double dist = int.Parse(inputTextBox.Text);
+			double dist = 0;
+			try
+			{
+				dist = int.Parse(inputTextBox.Text);
+			}
+			catch (Exception ex)
+			{
+				var popUp = new MessageDialog(ex.Message);
+				await popUp.ShowAsync();
+				inputTextBox.Text = "";
+				inputTextBox.Focus(FocusState.Programmatic);
+				return;
+			}
+
 			if(title.Text == "Metric to Imperial")
 			{
 				dist = dist * 3.28084;
@@ -53,12 +80,25 @@ namespace Calculator
 			{
 				dist = dist / 3.28084;
 			}
-			outputTextBox.Text = dist.ToString();
+			outputTextBox.Text = Math.Round(dist,4).ToString();
 		}
 
-		private void massButton_Click(object sender, RoutedEventArgs e)
+		private async void massButton_Click(object sender, RoutedEventArgs e)
 		{
-			double mass = int.Parse(inputTextBox.Text);
+			double mass = 0;
+			try
+			{
+				mass = int.Parse(inputTextBox.Text);
+			}
+			catch (Exception ex)
+			{
+				var popUp = new MessageDialog(ex.Message);
+				await popUp.ShowAsync();
+				inputTextBox.Text = "";
+				inputTextBox.Focus(FocusState.Programmatic);
+				return;
+			}
+
 			if(title.Text == "Metric to Imperial")
 			{
 				mass = mass * 2.20462;
@@ -67,12 +107,25 @@ namespace Calculator
 			{
 				mass = mass / 2.20462;
 			}
-			outputTextBox.Text = mass.ToString();
+			outputTextBox.Text = Math.Round(mass,4).ToString();
 		}
 
-		private void pressureButton_Click(object sender, RoutedEventArgs e)
+		private async void pressureButton_Click(object sender, RoutedEventArgs e)
 		{
-			double press = int.Parse(inputTextBox.Text);
+			double press = 0;
+			try
+			{
+				press = int.Parse(inputTextBox.Text);
+			}
+			catch (Exception ex)
+			{
+				var popUp = new MessageDialog(ex.Message);
+				await popUp.ShowAsync();
+				inputTextBox.Text = "";
+				inputTextBox.Focus(FocusState.Programmatic);
+				return;
+			}
+
 			if(title.Text == "Metric to Imperial")
 			{
 				press = press * 0.14503;
@@ -81,7 +134,7 @@ namespace Calculator
 			{
 				press = press / 0.14503;
 			}
-			outputTextBox.Text = press.ToString();
+			outputTextBox.Text = Math.Round(press,4).ToString();
 		}
 
 		private void switchButton_Click(object sender, RoutedEventArgs e)
