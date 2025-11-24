@@ -117,7 +117,7 @@
 
 			<StackPanel HorizontalAlignment="Center">
 				<Button x:Name="CalculateCurrencyButton" Width="200" Margin="20" Click="CalculateCurrencyButton_Click">Calculate Currency</Button>
-				<Button Width="200" Margin="20">Exit</Button>
+				<Button x:Name="exitButton" Width="200" Content="Exit" Margin="20" Click="exitButton_Click"/>
 			</StackPanel>
 
 
