@@ -26,28 +26,29 @@ namespace Calculator
 		{
 			this.InitializeComponent();
 		}
-
+		// added nav for release||
 		private void unitsConverterCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(UnitConverter));
 
 		}
+		// added nav for release||
 
 		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MortgageCalc));
 		}
-
+		// added nav for release||
 		private void exitButton_Click(object sender, RoutedEventArgs e)
 		{
 			Windows.ApplicationModel.Core.CoreApplication.Exit();
 		}
-
+		// added nav for release||
 		private void mathsCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(MainPage));
 		}
-
+		// added nav for release||
 		private void currencyCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof (CurrencyConvertor));
