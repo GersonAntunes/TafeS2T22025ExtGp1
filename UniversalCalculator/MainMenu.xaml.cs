@@ -27,6 +27,12 @@ namespace Calculator
 			this.InitializeComponent();
 		}
 
+		private void unitsConverterCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(UnitConverter));
+
+		}
+
 		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MortgageCalc));
