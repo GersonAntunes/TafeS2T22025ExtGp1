@@ -42,5 +42,10 @@ namespace Calculator
 		{
 			Windows.ApplicationModel.Core.CoreApplication.Exit();
 		}
+
+		private void mathsCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(MainPage));
+		}
 	}
 }

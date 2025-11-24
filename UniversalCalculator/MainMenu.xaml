@@ -17,7 +17,7 @@
 				<TextBlock x:Name="universalCalculatorTextBlock" Text="Universal Calculator" FontSize="20"/>
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Margin="5">
-				<Button x:Name="mathsCalculatorButton" Content="Maths Calculator" Background="Gray" Width="180"/>
+				<Button x:Name="mathsCalculatorButton" Content="Maths Calculator" Background="Gray" Width="180" Click="mathsCalculatorButton_Click"/>
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Margin="5">
 				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Background="Gray" Width="180" Click="mortgageCalculatorButton_Click"/>
