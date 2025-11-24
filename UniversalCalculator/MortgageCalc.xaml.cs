@@ -20,32 +20,43 @@ namespace Calculator
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class MainMenu : Page
+	public sealed partial class MortgageCalc : Page
 	{
-		public MainMenu()
+		public MortgageCalc()
 		{
 			this.InitializeComponent();
 		}
 
-		private void unitsConverterCalculatorButton_Click(object sender, RoutedEventArgs e)
+		private void calculateButton_Click(object sender, RoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(UnitConverter));
+			try
+			{
+				double P = double.Parse(principalBorrowedTextBox.Text);
+				double annualRate = double.Parse(annualInterestRateTextBox.Text) / 100;
+				int years = int.Parse(yearsTextBox.Text);
+				int months = int.Parse(monthsTextBox.Text);
 
-		}
+				double i = annualRate / 12;
+				int n = (years * 12) + months;
 
-		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(MortgageCalc));
+				double M = P * (i * Math.Pow(1 + i, n)) / (Math.Pow(1 + i, n) - 1);
+
+				monthlyInteresetRateTextBox.Text = i.ToString("F4");
+				monthlyRepaymentTextBox.Text = M.ToString("F2");
+
+			}
+
+			catch
+			{
+				monthlyRepaymentTextBox.Text = "Invalid input!";
+			}
+
 		}
 
 		private void exitButton_Click(object sender, RoutedEventArgs e)
 		{
-			Windows.ApplicationModel.Core.CoreApplication.Exit();
-		}
+			Frame.Navigate(typeof(MainMenu));
 
-		private void mathsCalculatorButton_Click(object sender, RoutedEventArgs e)
-		{
-			this.Frame.Navigate(typeof(MainPage));
 		}
 	}
 }
