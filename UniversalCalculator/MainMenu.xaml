@@ -28,6 +28,9 @@
 			<StackPanel HorizontalAlignment="Center" Margin="5">
 				<Button x:Name="unitsConverterCalculatorButton" Content="Units Converter Calculator" Background="Gray" Width="180" Click="unitsConverterCalculatorButton_Click"/>
 			</StackPanel>
+			<StackPanel HorizontalAlignment="Center" Margin="5">
+				<Button x:Name="tripCalculator" Content="Trip Calculator" Background="Gray" Width="180" Click="tripCalculator_Click"></Button>
+			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Margin="30">
 				<Button x:Name="exitButton" Content="Exit" Background="Gray" Width="180" Click="exitButton_Click"/>
 			</StackPanel>
