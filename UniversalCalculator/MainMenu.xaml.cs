@@ -53,5 +53,17 @@ namespace Calculator
 		{
 			this.Frame.Navigate(typeof (CurrencyConvertor));
 		}
-	}
+
+		private async void tripCalculator_Click(object sender, RoutedEventArgs e)
+		{
+			ContentDialog dialog = new ContentDialog
+			{
+				Title = "Info",
+				Content = "Trip calculator C# code will be developed later",
+				CloseButtonText = "OK"
+			};
+
+			await dialog.ShowAsync();
+		}
+    }
 }
